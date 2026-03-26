@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDM2 - W7P2 - 2 Star Exercise</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./lib/main-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="./lib/libraries/p5.min.js"></script>
+    <script src="./lib/libraries/p5.sound.min.js"></script>
+  </head>
+
+  <body>
+    <h1>2 Star Exercise</h1>
+    <p>Your sketch:</p>
+    <div class="guidance">
+        <h2>Instructions</h2>
+        <div>
+            <p>For this task we will learn how to create a 'lookahead' camera. For this task some code to create the level has been provided. If you run the code you will see we have a centred camera</p>
+          
+            <h3>Create the variables</h3>
+              <p>To create our lookahead camera system we need to add 4 global variables:</p>
+            <ol>
+                <li>
+                    Create <code>lookaheadX</code> and <code>lookaheadY</code> at the top of the script. Set their value to 0.
+                </li>
+            </ol>
+            <h3>Setting the Value of lookaheadX & lookaheadY</h3>
+             <p>
+                lookaheadX and lookaheadY set our direction telling us which way we need the player to move so that there is more room ahead of them.
+            </p>
+            <ol>
+               <li>
+                    In <code>playerMovement()</code> add the lookaheadX value to each <code>if()</code> statement. The value for each should follow the direction of travel. For example, the first <code>if()</code> statement will have a lookaheadX value of -1 and lookaheadY of 0. This is the A key which will move the player left.
+                </li>
+
+            </ol>
+            <h3>Add the offset</h3>
+            <p>
+                Now we have our variables we can set the lookahead offset.
+            </p>
+          <ol>
+                <li>
+                    In the <code>drawPlayer()</code> function create two local variables called offsetX and offsetY.
+                </li>
+                <li>
+                    Set the value of the two new local variables will is lookaheadX * OFFSET AMOUNT and lookaheadY * OFFSET AMOUNT. In this task, OFFSET AMOUNT is a value of your choice.
+                </li>
+                 <li>
+                    For the player edit the <code>rect()</code> function X and Y values to follow this formular: <code>Starting Pos + Canvas Offset - Player Pos - Look Ahead Camera Offset</code> for example <code>x + width/2 - x - offsetX</code>
+                </li>
+                <li>
+                    Try out the game and see the movement.
+                </li>
+            </ol>
+
+        <h3>Add Lerp</h3>
+            <p>
+                You will see that the player now jumps backwards when we walk in different directions. This is the effect we are looking for but it does not look very smooth!
+            </p>
+            <p>
+                To improve on this do the following:
+            </p>
+            <ol>
+                <li>
+                    Create <code>cameraX</code> and <code>cameraY</code> at the top of the script. Set their value to 0.
+                </li>
+                 <li>
+                    In the <code>drawPlayer()</code> function set the value of <code>cameraX</code> and <code>cameraY</code>  to be a <code>lerp()</code> which takes in <code>cameraX</code> as the starting position, <code>offsetX</code> as the end positions and <code>0.1</code> as the iteration. For example, for X the code will be <code>  cameraX = lerp(cameraX, offsetX, 0.1);</code>
+                </li>
+                 <li>
+                    Edit the player <code>rect()</code> to replace <code>offsetX</code> and <code>offsetY</code> with the new <code>cameraX</code> and <code>cameraY</code> values.
+                </li>
+                <li>
+                    Try out the game and see smoother movement
+                </li>
+            </ol>
+
+               
+     
+        </div>
+        <!-- <div>
+            <button class="btn btn-primary hint" type="button" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
+                Hint
+            </button>
+            <div class="collapse" id="hint">
+                <div class="card card-body">
+                    <p>Include tips that might help students get unstuck.</p>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>
