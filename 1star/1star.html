@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDM2 - W7P2 - 1 Star Exercise</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./lib/main-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="./lib/libraries/p5.min.js"></script>
+    <script src="./lib/libraries/p5.sound.min.js"></script>
+  </head>
+
+  <body>
+    <h1>1 Star Exercise</h1>
+    <p>Your sketch:</p>
+    <div class="guidance">
+        <h2>Instructions</h2>
+        <div>
+            <p>For this task we will explore how to create a centered camera</p>
+            <h3>Create the enviroment</h3>
+              <p>To start create an enviroment to walk around in. We can do this in a few ways but for this task I would recomend doing the following:</p>
+            <ol>
+                <li>
+                    Find a background image to form a room or a floor
+                </li>
+                <li>
+                    Use <code>preload()</code> to load in the image
+                </li>
+                <li>
+                    In <code>draw()</code> use <code>image()</code> to draw the background. For now use a hardcoded x and y position.
+                </li>
+            </ol>
+            <h3>Create a player</h3>
+             <p>
+                Next we need a player. For this task you may want to use a <code>Class</code> but for understanding how the offset works I suggest doing the following:
+            </p>
+            <ol>
+                <li>
+                    In <code>draw()</code> or in a custom <code>playerDraw()</code> function create a <code>rect()</code>.
+                </li>
+                <li>
+                    Create 2 global variables for the X and Y values. Set their values in <code>setup()</code>.
+                </li>
+                <li>
+                    Set the width and height to 50, 50.
+                </li>
+            </ol>
+            <h3>Add the offset</h3>
+            <p>
+                Now that our level is set up we can add the required offsets to make our level move
+            </p>
+            <ol>
+                 <li>
+                    For the background image edit the <code>image()</code> function X and Y values to follow this formular: <code>Starting Pos + Canvas Offset - Player Pos</code> for example <code>50 + width/2 - x</code>
+                </li>
+                 <li>
+                    For the player edit the <code>rect()</code> function X and Y values to follow this formular: <code>Starting Pos + Canvas Offset - Player Pos</code> for example <code>x + width/2 - x</code>
+                </li>
+                <li>
+                    Try out the game and see the momvent.
+                </li>
+            </ol>
+               
+     
+        </div>
+        <!-- <div>
+            <button class="btn btn-primary hint" type="button" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
+                Hint
+            </button>
+            <div class="collapse" id="hint">
+                <div class="card card-body">
+                    <p>Include tips that might help students get unstuck.</p>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>
